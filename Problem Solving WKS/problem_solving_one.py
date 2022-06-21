@@ -15,11 +15,8 @@ def capitalize_words_in_string(string):
     for index in range(len(string)):
         if index == 0:
             new_str += string[index].upper()
-        elif index == temp:
-            continue
-        elif string[index] == " ":
-            new_str += string[index] + string[index + 1].upper()
-            temp = index + 1
+        elif string[index -1] == " ":
+            new_str += string[index].upper()
         else:
             new_str += string[index]
         
@@ -72,3 +69,22 @@ def is_palindrome(string):
     return string == reversed_string
 
 print(is_palindrome('madam'))
+
+
+original_string = 'aaabbbbbccccaacccbbbaaabbbaaa'
+
+def word_compressor(string):
+    final_result = ''
+    letter_counter = 1
+    for index in range(len(string)):
+        if index == len(string) - 1:
+            final_result += str(letter_counter) + string[index]
+        elif string[index] == string[index + 1]:
+            letter_counter += 1
+        elif string[index] != string[index + 1]:
+            final_result += str(letter_counter) + string[index]
+            letter_counter = 1
+    return final_result
+
+print(word_compressor(original_string)) 
+         

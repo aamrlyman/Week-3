@@ -1,3 +1,11 @@
+from cell_phone import Cell_Phone
+
+Ricks_Cell = Cell_Phone('iphone 8', 801-413-6276, 'Rick')
+John_cell = Cell_Phone('galaxy9', 8013245532, 'John')
+
+Ricks_Cell.send_text_message(John_cell)
+print(John_cell.messages)
+
 from itertools import product
 from alarm_clock import Alarm_Clock
 from customer import Customer
