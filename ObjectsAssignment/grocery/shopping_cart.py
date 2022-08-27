@@ -11,6 +11,7 @@ class Shopping_Cart:
     
     def append_product(self, product):
         self.products_in_cart.append(product)
+        print(f'{product.name} was added to your cart')
     
     def empty_shopping_cart(self):
         self.products_in_cart.clear()
@@ -21,7 +22,7 @@ class Shopping_Cart:
         for products in self.products_in_cart:
             current_shopping_cart += products.name + ", "
         if current_shopping_cart == '':
-            print("Shopping Cart is empty")
+            print("Shopping cart is now empty")
         else: 
             print(current_shopping_cart)
         
